@@ -1,0 +1,18 @@
+#关闭thymeleaf的缓存
+spring:
+  thymeleaf:
+    cache: false
+    prefix: file:src/main/resources/templates/
+    mode: HTML
+
+  #数据库
+  datasource:
+    url: jdbc:mysql://localhost:3306/javaee?serverTimezone=GMT%2B8
+    username: root
+    password: 111111
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+#  security:
+#    user:
+#      name: admin
+#      password: 123456

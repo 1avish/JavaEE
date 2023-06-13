@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人主页</title>
+    <link rel="stylesheet" th:href="@{/css/style_index.css}">
+    <style>
+
+        .information{
+            margin-left: 200px;
+            width: 800px;
+            height: 500px;
+            border-radius: 5%;
+            box-shadow: 4px 4px 10px  #bde4f4;
+            background-color: #b6cefc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        input{
+            width: 400px;
+            background-color: transparent;
+            color: #404969;
+            border:none;
+            border-bottom: 1px solid #404969;
+            padding: 10px;
+            text-indent: 8px;
+            margin: 8px 0;
+            font-size: 16px;
+            /*字间距*/
+            letter-spacing: 2px;
+        }
+        /*focus：选中输入框*/
+        input:focus{
+            outline: none;
+        }
+        input:focus::placeholder{
+            opacity: 0;
+            transition: 0.5s;
+        }
+    </style>
+</head>
+<body id="body-pd">
+    <div class="l-navbar" id="navbar">
+        <nav class="nav">
+            <div>
+                <div class="nav_brand">
+                    <ion-icon name="menu-outline" class="nav_toggle" id="nav-toggle"></ion-icon>
+
+                    <a href="#" class="nav_logo">物流管理</a>
+                </div>
+                <div class="nav_list">
+                    <a href="#" class="nav_link active">
+                        <ion-icon name="home-outline" class="nav_icon" ></ion-icon>
+                        <span class="nav_name">主页</span>
+                    </a>
+                    <a href="#" class="nav_link">
+                        <ion-icon name="chatbubbles-outline" class="nav_icon" ></ion-icon>
+                        <span class="nav_name">个人信息</span>
+                    </a>
+                    <div class="nav_link collapse"  onclick="redirectTo()">
+                        <ion-icon name="folder-outline" class="nav_icon" ></ion-icon>
+                        <span class="nav_name" >订单</span>
+                    </div>
+                    <a href="#" class="nav_link">
+                        <ion-icon name="settings-outline" class="nav_icon" ></ion-icon>
+                        <span class="nav_name">设置</span>
+                    </a>
+                </div>
+            </div>
+            <a th:href="@{/logout}" class="nav_link">
+                <ion-icon name="log-out-outline" class="nav_icon" ></ion-icon>
+                <span class="nav_name">退出登陆</span>
+            </a>
+        </nav>
+    </div>
+
+    <div class="information">
+        <div>
+            <p>姓名</p>
+            <input type="text" th:value="${username}">
+        </div>
+        <div>
+            <p>性别</p>
+            <input type="text" th:value="${sex}">
+        </div>
+
+    </div>
+
+
+
+    <script th:inline="javascript">
+
+        const id = [[${id}]];
+        function redirectTo() {
+            window.location.href = '/order/'+id;
+        }
+    </script>
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+    <script th:src="@{/js/main_index.js}"></script>
+</body>
+</html>

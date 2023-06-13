@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card{
+            margin-left: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #b6cefc;
+            width: 300px;
+            height: 400px;
+            border-radius: 8px;
+            box-shadow: 5px 5px 10px #b6cefc;
+            color: white;
+        }
+        .text{
+            padding: 8px;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card" th:each="order : ${orders}">
+        <h1>订单信息</h1>
+        <div class="text">订单编号: <span th:text="${order.id}"></span></div>
+        <div class="text">用户id: <span th:text="${order.uid}"></span></div>
+        <div class="text">收获地址: <span th:text="${order.address}"></span></div>
+        <div class="text">收获人姓名: <span th:text="${order.consigneeName}"></span></div>
+        <div class="text">订单价格: <span th:text="${order.worth}"></span></div>
+    </div>
+
+    <script>
+        console.log()
+    </script>
+</body>
+</html>

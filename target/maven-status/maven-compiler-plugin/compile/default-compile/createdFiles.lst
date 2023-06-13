@@ -1,0 +1,8 @@
+com\example\shippingtransportation\controller\LoginController.class
+com\example\shippingtransportation\common\MybatisPlusConfig.class
+com\example\shippingtransportation\mapper\UserMapper.class
+com\example\shippingtransportation\entity\User.class
+com\example\shippingtransportation\ShippingTransportationApplication.class
+com\example\shippingtransportation\controller\RegisterController.class
+com\example\shippingtransportation\entity\Order.class
+com\example\shippingtransportation\controller\RouterController.class
